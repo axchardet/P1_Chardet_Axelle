@@ -1,0 +1,646 @@
+@font-face {
+    font-family: 'robotobold';
+    src: url('fonts/Roboto-Bold-webfont.eot');
+    src: url('fonts/Roboto-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Roboto-Bold-webfont.woff2') format('woff2'),
+         url('fonts/Roboto-Bold-webfont.woff') format('woff'),
+         url('fonts/Roboto-Bold-webfont.ttf') format('truetype'),
+         url('fonts/Roboto-Bold-webfont.svg#robotobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'robotolight';
+    src: url('fonts/Roboto-Light-webfont.eot');
+    src: url('fonts/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Roboto-Light-webfont.woff2') format('woff2'),
+         url('fonts/Roboto-Light-webfont.woff') format('woff'),
+         url('fonts/Roboto-Light-webfont.ttf') format('truetype'),
+         url('fonts/Roboto-Light-webfont.svg#robotolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*Les styles générals*/
+
+body {
+	background: #fff;
+	color: #000;
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', Arial, serif;
+}
+
+header, #services, .content_services, .left_icones, #projects, .projects_content, footer, .content_footer {
+	display: flex;
+}
+
+div{
+	min-height: 90vh;
+}
+  
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+a:link {
+text-decoration:none;
+}
+
+ul /*j'enlève les puces*/ {   
+    list-style-type: none;
+    text-decoration: none;
+    margin: 0;
+}
+
+h1 h2 h3 {
+    font-family: 'Roboto';
+}
+
+h1, h2 {
+    font-size: 2.5em;
+    font-weight: bolder;
+}
+
+/*HEADER*/
+
+header {
+    display: flex;
+    position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 6em;
+	background-color: #fff;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	border-bottom: 1px solid #e5e5e5;
+	z-index: 1000;
+}
+
+#logo_menu1 {
+margin-left: 8em;
+}
+
+#menu {
+margin-left: 26em; 
+}
+
+#menu ul li {
+    display: inline-block;
+    font-family: 'Roboto';
+    text-decoration: none;
+}
+
+#menu ul li a {
+	color: #535659;
+    padding: 2em 0.5em 0 0.5em;
+}
+
+#menu ul li a:hover {
+    border-top: 2px solid #0088b5;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+li {
+    margin: 10px;
+}
+
+	/*--Slide--*/
+
+/* animation du slider */
+@keyframes slider {
+	0%, 45%	{ left: 0 }
+	55%, 100% { left: -100% }
+}
+	
+	
+/* Gestion de la dimension responsive */
+#slide_pictures, #slide_pictures .container, #slide_pictures figure img {
+	position: relative;
+	width: 100%;
+}
+
+#slide_pictures {
+	margin: 0 auto 2em;
+	padding-top: 6em;
+}
+
+/* Pas de débordement du conteneur */
+#slide_pictures .container {
+	overflow: hidden;
+}
+
+/* Largeur du slide = 100% x le nombre de slides : Petit fille et petit garçon */
+#slide_pictures .slider {
+	position: absolute;
+	left:0; top:0;
+    width: 200%;
+	animation: slider 22s infinite;
+}
+    
+/* J'annule les marges sur la figure */
+#slide_pictures figure {
+	position: relative;
+	display: inline-block;
+	width: 50%;
+	padding: 0; 
+	margin: 0;
+}
+
+#slide_pictures figure:nth-child(2) {
+	float: right;
+}
+
+/* Le styles des légendes sur les images */
+#slide_pictures figcaption {
+	position: absolute;
+	left:10%; bottom: 33%;
+	max-width: 35%;
+	text-align: left;
+	color: #fff;
+}
+
+/* Style de la figcaption */
+figcaption h1 {
+    font-size: 2em;
+    color: #fff;
+}
+
+.pblanc {
+    color: #fff;
+}
+
+figcaption h1 span {
+	color: #5CADD3;
+}
+
+a.bouton {
+    padding: 10px 30px; 
+    background: #5CADD3; 
+    color: #fff;
+    border-radius: 3px; 
+}
+
+a.bouton:hover {
+    background: #387794;
+    padding: 13px 33px 13px 33px;
+    
+}
+
+/* Le positionnement des flèches */
+#slide_pictures #prev{ 
+	left: -22px; 
+	padding: 20px 12px 20px 20px; 
+}
+#slide_pictures #next { 
+	right: -19px; 
+	padding: 20px 20px 20px 12px; 
+}
+
+
+/* Le style des flèches < & > */
+#slide_pictures .commands {
+    display: block;
+    justify-content: space-around;
+	position: absolute;
+	top: 34%;
+	border-bottom:0;
+	font-size: 1.2em;
+	color: white;
+	text-decoration:none;
+	background-color: rgba(0,0,0,0.3);
+	border-radius: 50%;
+}
+
+#slide_pictures .commands:hover {
+	color: #000;
+	background-color: rgba(255,255,255,0.3);
+}
+
+
+button {
+    background-color: #5CADD3;
+    border-radius: 10px 10px 10px 10px;
+    font-weight: 700;
+    font-size: 16px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 110px;
+    
+}
+
+/*La partie services*/
+
+#services {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+	margin-bottom: 0.5em;
+}
+
+.content_services:nth-child(1) {
+	width: 35%;
+	text-align: center;
+	flex-direction: column;
+	margin-top: 1em;
+	margin-bottom: 2em;
+	
+}
+
+.content_services:nth-child(2) {
+	width: 80%;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center; 
+}
+
+
+/* Les styles de titres, les paragraphes et les listes */
+
+#services h2, #services h3 {
+	margin-bottom: .3em;
+}
+
+#services p {
+	margin-top: .5em;
+	color: #535659;
+	font-size: .9em;
+}
+
+#services div {
+	min-height: 1vh;
+}
+
+#nos_services_mobile {
+	min-height: 1vh;
+}
+
+#services ul li {
+	display: inline-flex;
+	flex-direction: row;
+	padding-bottom: 1em;
+}
+
+/* icones liste et titres*/
+
+
+.left_icones {
+  /* Pour aligner icon */
+	align-items: center;
+	float: left;
+	background-color: #fff;
+}
+
+.icon {
+	color: #5CABD1;
+}
+
+.icon .fas {
+  /* le cercle autour des icones */
+  padding: 20px 19px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+}
+
+.blue_point {
+	/* point sur le cercle */
+	position: relative;
+	left: -10px;
+	margin-right: 10px;
+	font-size: 3rem;
+	color: #5CABD1;
+}
+
+/* Les styles général des séparateurs situés sous mon titre h2 */
+.blue_point_ttle {
+    position: relative;
+    color: #5CABD1;
+}
+
+/*Trait de chaque côté de l'icone cercle */
+.blue_point_ttle::before, .blue_point_ttle::after {
+	position: absolute;
+	bottom: 50%;
+    content: " ";
+	width: 25%;
+	height: 1px;
+	background: #E5E5E5;
+} 
+.blue_point_ttle::before 
+{
+	left: 55%;
+}
+
+.blue_point_ttle:after 
+{
+	right: 55%;
+}
+
+.blue_point_ttle i 
+{
+	border: 3px solid #fff;
+	border-radius: 50px; 
+}
+
+/*--SECTION : PROJETS--*/
+
+#projects div
+{
+	min-height: 1vh;
+}
+
+.projects_content:nth-child(1) p
+{
+	color:#535659;
+}
+
+#projects
+{
+	align-items: center;
+	flex-direction: column;
+	background: #f5f5f5;
+	padding-bottom: 5em;
+	margin-top: 4em;
+}
+
+#projects h2
+{
+	margin-top: 2.6em;
+	margin-bottom: 0.3em;
+}
+
+#projects p
+{
+	margin-top: 0.7em;
+	width: 55%;
+	text-align: center;
+}
+
+.projects_content:nth-child(1)
+{
+	align-items: center;
+	flex-direction: column;
+}
+
+/* Ajustement du séparateur sous le titre de la section : projets */
+   #projects .blue_point_ttle:before 
+{
+	color: #EFEFEF;
+	left: 150%;
+	width: 10em;
+}
+
+#projects .blue_point_ttle:after 
+{
+	right: 150%;
+	width: 10em;
+}
+
+/* Le menu de la section : projets */
+
+.projects_content:nth-child(1) ul li 
+{
+	display: inline-block;
+	margin: 2em 0 2em 0; 
+}
+
+#projects ul 
+{
+	margin-left: -2em;
+}
+
+#projects ul li a 
+{
+	padding: 10px 30px;
+	color: #535659;
+	background-color: #E5E5E5;
+}
+
+#projects ul li a:hover 
+{
+	position: relative;
+	background: #0088b5;
+	padding-bottom: 7px;
+	border-bottom: 3px solid #01627f;
+	color: #fff;
+}
+
+/* Le petit triangle sous la bordure */
+#projects ul li a:hover:after {
+	position: absolute;
+	top: 107.5%;
+	left: 45%;
+	content: "";
+	width: 0;
+	border: 8px solid transparent;
+	border-top: 8px solid #01627f;
+}
+
+/* Application d'un border-radius au premier et au dernier élément */ 
+.first {
+	border-radius: 3px 0 0 3px;
+}
+
+.last {
+	border-radius: 0 3px 3px 0;
+}
+/* Deuxième partie de la section : Projet */
+.projects_content:nth-child(2) {
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: space-between;
+}
+
+/* Les styles et disposition des images de la section : Projets */
+.projects_content:nth-child(2) figure {
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: space-between;
+	position: relative;
+	width: 23%;
+	margin: 1% 1%;
+	padding: 10px 0px;
+	overflow: hidden;
+}
+
+.projects_content:nth-child(2) figure img {
+	max-width: 100%;
+}
+
+.projects_content:nth-child(2) figure img:hover {
+	filter: blur(2px);
+}
+
+/* L'ajustement des légendes des images du portfolio */
+.projects_content:nth-child(2) figcaption {
+	position: absolute;
+	bottom: .9em;
+	left: 0;
+	padding: 0 .8em;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.5);	
+	color: #fff;
+	opacity: 0; /*Je masque la légende*/
+}
+
+/* Voir la légende au passage de la souris */
+.projects_content:nth-child(2) figure:hover > figcaption {
+	opacity: 1;
+}
+
+/* style et positionnement icon eye */
+.projects_content:nth-child(2) figcaption i {
+	position: absolute;
+	top: -28%;
+	left: 75%;
+	padding: 16px 15px;
+	background: #0088b5;
+	border: 3px solid #fff;
+	border-radius: 50%;
+}
+
+.projects_content:nth-child(2) figcaption i:hover {
+	top: -25%;
+	left: 75%;
+	background: #00c3ff;
+	border: 2px solid #fff;
+	padding: 15px 14px;
+	box-shadow: 0 0 3px #000;
+}
+
+
+.projects_content:nth-child(2) figcaption a {
+	color: #fff;
+}
+
+/*SECTION : CONTACT US + MAP*/
+
+#map div
+{
+	min-height: 1vh;
+}
+
+#map {
+position: relative;
+width: 100%;
+height: 40%;
+padding-top: 3em;
+}
+
+#map div:first-child {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+#map h2 {
+margin-bottom: .5em;
+}
+
+#map div:first-child p {
+margin-top: 0.5em;
+margin-bottom: 4em;
+text-align: center;
+}
+
+/*Ajustement séparateur sous le titre de la Section : Contact*/
+
+#map .blue_point_ttle:before{
+left: 1.5em;
+width: 4em;
+}
+
+#map .blue_point_ttle:after{
+	right: 1.5em;
+	width: 4em;
+}
+
+.map_responsive iframe{
+	overflow: hidden;
+	position: relative;
+	height: 600px;
+	width: 100%;
+	border-bottom: 1px solid #e5e5e5;
+	z-index: 2;
+}
+
+.hover_map{
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 600px;
+	background: #007bff4d;
+	z-index: 997;
+	margin-top: 16.5em;
+}
+
+.hover_map:hover{
+	opacity: 1;
+}
+
+.map_reponsive iframe{
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	z-index: 996;
+}
+
+.contact
+{
+	position: absolute;
+	top: 32%;
+	right: 10%;
+	padding: 1em 1.2em 1em 1em;
+	z-index: 998;
+	background: rgba(255, 255, 255, 0.8);
+}
+
+/* FOOTER */
+
+footer div {
+	min-height: 1vh;
+}
+
+footer {
+	padding-top: 1em;
+	background: #f5f5f5;
+}
+
+#container_footer {
+	width: 100%;
+}
+
+.content_footer {
+	flex-direction: column;
+	align-items: center;
+}
+
+.content_footer ul:first-child {
+	margin-bottom: 0;
+}
+
+.content_footer ul li {
+	display: inline-block;
+	padding-left: 1em;
+}
+
+.content_footer ul li a:hover {
+	font-weight: bold;
+}
+
+#copyright {
+	width: 100%;
+	text-align: center;
+}
+/*End*/
